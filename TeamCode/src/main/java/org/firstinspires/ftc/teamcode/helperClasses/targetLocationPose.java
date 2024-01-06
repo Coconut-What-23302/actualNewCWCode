@@ -91,6 +91,8 @@ public class targetLocationPose extends LinearOpMode {
             telemetry.addData("left claw position", robot.leftClaw.getPosition());
             telemetry.addData("right claw position", robot.rightClaw.getPosition());
             telemetry.update();
+            PoseStorage.transferedPose = drive.getPoseEstimate();
         }
+
     }
 }
