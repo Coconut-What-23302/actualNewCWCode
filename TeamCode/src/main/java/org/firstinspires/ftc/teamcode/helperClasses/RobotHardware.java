@@ -44,10 +44,10 @@ public class RobotHardware
     // final variables
 
     public class ClawPos {
-        public static final double RIGHT_OPEN = 0.75;
-        public static final double LEFT_OPEN =  0.67;
-        public static final double RIGHT_CLOSE = 0.45;
-        public static final double LEFT_CLOSE = 1.0;
+        public static final double RIGHT_OPEN = 0.56;
+        public static final double LEFT_OPEN =  0.6388;
+        public static final double RIGHT_CLOSE = .7177;
+        public static final double LEFT_CLOSE = 0.469;
     }
 
 

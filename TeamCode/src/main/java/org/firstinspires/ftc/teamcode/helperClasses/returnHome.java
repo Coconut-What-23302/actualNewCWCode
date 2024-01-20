@@ -39,6 +39,13 @@ public class returnHome extends LinearOpMode {
         startLocationText.put(2, "Frontstage Red");
         startLocationText.put(3, "Frontstage Blue");
 
+        telemetry.addLine("DPad up = Backstage Red");
+        telemetry.addLine("DPad right = Backstage Blue");
+        telemetry.addLine("DPad down = Frontstage Red");
+        telemetry.addLine("DPad left = Frontstage Blue");
+        telemetry.addData("Select Home", startLocationText.get(startLocation));
+        telemetry.update();
+
 
         while (!startVarsPicked) {
 
@@ -69,8 +76,7 @@ public class returnHome extends LinearOpMode {
         }
 
 // Display the correct robot start location
-        telemetry.addData("Select Home", startLocationText.get(startLocation));
-        telemetry.update();
+
 
         /*
          *   Division between main code loop and initialization code because i'm blind

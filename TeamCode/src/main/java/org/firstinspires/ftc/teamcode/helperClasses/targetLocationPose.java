@@ -20,7 +20,7 @@ public class targetLocationPose extends LinearOpMode {
         robot.init(hardwareMap);
 
 
-        drive.setPoseEstimate(new Pose2d(-39, 70, Math.toRadians(-90)));
+        drive.setPoseEstimate(new Pose2d(0, 0, Math.toRadians(-90)));
 
         waitForStart();
 

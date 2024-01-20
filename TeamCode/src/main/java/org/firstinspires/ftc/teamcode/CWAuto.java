@@ -6,6 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.teamcode.drive.SampleMecanumDrive;
+import org.firstinspires.ftc.teamcode.helperClasses.AutoPaths.backstageBlue;
 import org.firstinspires.ftc.teamcode.helperClasses.AutoPaths.frontstageRed;
 import org.firstinspires.ftc.teamcode.helperClasses.PoseStorage;
 import org.firstinspires.ftc.teamcode.helperClasses.RobotHardware;
@@ -35,6 +36,9 @@ public class CWAuto extends LinearOpMode {
         RobotHardware robot = new RobotHardware();
         robot.init(hardwareMap);
 //
+    robot.clawPosBoth(true);
+    robot.clawPosBoth(false);
+    robot.clawPosBoth(true);
 //        // Create a dictionary mapping start locations to text descriptions
 //        Dictionary<Integer, String> startLocationText = new Hashtable<>();
 //        startLocationText.put(0, "Backstage Red");
@@ -83,7 +87,7 @@ public class CWAuto extends LinearOpMode {
         if (isStopRequested()) return;
 
 
-        TrajectorySequence spikeLeftTrajectory = frontstageRed.Left(drive, robot);
+        TrajectorySequence spikeLeftTrajectory = backstageBlue.Middle(drive, robot);
         drive.followTrajectorySequence(spikeLeftTrajectory);
 
 
