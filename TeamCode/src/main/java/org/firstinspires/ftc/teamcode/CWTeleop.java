@@ -76,8 +76,11 @@ public class CWTeleop extends LinearOpMode {
 
 
 
-            double hangPivotPower = gamepad2.left_stick_y * 0.3;
-
+            double hangPivotPower = 0;
+            hangPivotPower =  gamepad2.left_stick_y * 0.3;
+            if (gamepad1.dpad_left) {
+                hangPivotPower = 0.25;
+            }
             // power
 
 
