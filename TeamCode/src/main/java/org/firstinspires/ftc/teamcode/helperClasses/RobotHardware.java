@@ -1,7 +1,7 @@
 package org.firstinspires.ftc.teamcode.helperClasses;
 
 //import com.qualcomm.robotcore.hardware.AnalogInput;
-
+import java.lang.Math;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
@@ -48,6 +48,8 @@ public class RobotHardware
         public static final double LEFT_OPEN =  0.6388;
         public static final double RIGHT_CLOSE = .7177;
         public static final double LEFT_CLOSE = 0.469;
+
+
     }
 
 
@@ -213,7 +215,10 @@ public class RobotHardware
             rightClaw.setPosition(ClawPos.RIGHT_CLOSE);
         }
     }
-
+    public double inchesToTicks (double inches){
+        double ticks = (((inches * 25.4) / 48) / (2*Math.PI)) * 751.8 ;
+        return ticks;
+}
     public enum Marcos {
         INTAKEPOS,
         DRIVEUNDERCENTERPOS,
