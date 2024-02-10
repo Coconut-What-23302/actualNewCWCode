@@ -58,10 +58,10 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.backLeft.setPower(0.5);
             robot.backRight.setPower(0.5);
 // ethan is a monkey
-            robot.backRight.setTargetPosition((int)robot.inchesToTicks(20));
-            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(20));
-            robot.frontRight.setTargetPosition((int)robot.inchesToTicks(20));
-            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(20));
+            robot.backRight.setTargetPosition((int)robot.inchesToTicks(18));
+            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(18));
+            robot.frontRight.setTargetPosition((int)robot.inchesToTicks(18));
+            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(18));
 // ethan is a monkey
             robot.backRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
