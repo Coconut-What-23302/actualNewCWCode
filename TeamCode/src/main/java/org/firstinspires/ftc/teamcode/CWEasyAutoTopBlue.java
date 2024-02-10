@@ -47,6 +47,17 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.frontRight.setPower(0);
             robot.backLeft.setPower(0);
             robot.backRight.setPower(0);
+
+            robot.clawMarcos(RobotHardware.Marcos.ROW7MAXPOS);
+            robot.clawArm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+            while (robot.clawArm.getCurrentPosition() < robot.clawArm.getTargetPosition()) {
+                telemetry.addData("Bigger", robot.clawArm.getCurrentPosition());
+                telemetry.addData("Stronger", robot.clawArm.getTargetPosition());
+// ethan is a monkey
+                telemetry.update();
+            }
+
 // ethan is a monkey
             robot.frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             robot.frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -58,10 +69,10 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.backLeft.setPower(0.5);
             robot.backRight.setPower(0.5);
 // ethan is a monkey
-            robot.backRight.setTargetPosition((int)robot.inchesToTicks(20));
-            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(20));
-            robot.frontRight.setTargetPosition((int)robot.inchesToTicks(20));
-            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(20));
+            robot.backRight.setTargetPosition((int)robot.inchesToTicks(24));
+            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(24));
+            robot.frontRight.setTargetPosition((int)robot.inchesToTicks(24));
+            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(24));
 // ethan is a monkey
             robot.backRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
@@ -74,20 +85,11 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
 // ethan is a monkey
                 telemetry.update();
             }
-            robot.clawMarcos(RobotHardware.Marcos.ROW3POS);
-            robot.clawArm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-            while (robot.clawArm.getCurrentPosition() < robot.clawArm.getTargetPosition()) {
-                telemetry.addData("Bigger", robot.clawArm.getCurrentPosition());
-                telemetry.addData("Stronger", robot.clawArm.getTargetPosition());
-// ethan is a monkey
-                telemetry.update();
-            }
+            robot.leftClaw.setPosition(RobotHardware.ClawPos.LEFT_OPEN);
+            robot.rightClaw.setPosition(RobotHardware.ClawPos.RIGHT_OPEN);
 
-            robot.leftClaw.setPosition(0.5);
-            robot.rightClaw.setPosition(0.5);
-
-            sleep(8000);
+            sleep(4000);
 
             robot.frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             robot.frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -109,7 +111,7 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.frontRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.frontLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-            while (robot.frontLeft.getCurrentPosition() < robot.frontLeft.getTargetPosition()){
+            while (robot.frontLeft.getCurrentPosition() > robot.frontLeft.getTargetPosition()){
                 telemetry.addData("Big", robot.frontLeft.getCurrentPosition());
                 telemetry.addData("Chungus", robot.frontLeft.getTargetPosition());
 // ethan is a monkey
