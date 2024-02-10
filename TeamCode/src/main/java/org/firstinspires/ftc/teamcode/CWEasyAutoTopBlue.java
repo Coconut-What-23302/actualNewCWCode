@@ -21,22 +21,22 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             robot.backRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             robot.backLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-// ethan is a monkey
+// setting power
             robot.frontLeft.setPower(0.5);
             robot.frontRight.setPower(0.5);
             robot.backLeft.setPower(0.5);
             robot.backRight.setPower(0.5);
-// ethan is a monkey
+// strafe right
             robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(24));
             robot.frontRight.setTargetPosition((int) robot.inchesToTicks(-24));
             robot.backLeft.setTargetPosition((int)robot.inchesToTicks(-24));
             robot.backRight.setTargetPosition((int)robot.inchesToTicks(24));
-// ethan is a monkey
+// go forward
             robot.frontLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.frontRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-// ethan is a monkey
+//
             while (robot.frontLeft.getCurrentPosition() < robot.frontLeft.getTargetPosition()){
                 telemetry.addData("suck big", robot.frontLeft.getCurrentPosition());
                 telemetry.addData("balls", robot.frontLeft.getTargetPosition());
@@ -71,16 +71,17 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             while (robot.frontLeft.getCurrentPosition() < robot.frontLeft.getTargetPosition()){
                 telemetry.addData("your mother", robot.frontLeft.getCurrentPosition());
                 telemetry.addData("last night", robot.frontLeft.getTargetPosition());
-// ethan is a monkey
                 telemetry.update();
             }
+
             robot.clawMarcos(RobotHardware.Marcos.ROW3POS);
             robot.clawArm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
+//lower claw
             while (robot.clawArm.getCurrentPosition() < robot.clawArm.getTargetPosition()) {
                 telemetry.addData("Bigger", robot.clawArm.getCurrentPosition());
                 telemetry.addData("Stronger", robot.clawArm.getTargetPosition());
-// ethan is a monkey
+
                 telemetry.update();
             }
 
