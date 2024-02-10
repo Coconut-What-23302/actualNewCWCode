@@ -40,7 +40,7 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             while (robot.frontLeft.getCurrentPosition() < robot.frontLeft.getTargetPosition()){
                 telemetry.addData("suck big", robot.frontLeft.getCurrentPosition());
                 telemetry.addData("balls", robot.frontLeft.getTargetPosition());
-// ethan is a monkey
+
                 telemetry.update();
             }
             robot.frontLeft.setPower(0);
@@ -85,10 +85,10 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
                 telemetry.update();
             }
 
-            robot.leftClaw.setPosition(0.5);
-            robot.rightClaw.setPosition(0.5);
+            robot.leftClaw.setPosition(RobotHardware.ClawPos.LEFT_OPEN);
+            robot.rightClaw.setPosition(RobotHardware.ClawPos.RIGHT_OPEN);
 
-            sleep(8000);
+            sleep(5000);
 
             robot.frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             robot.frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
