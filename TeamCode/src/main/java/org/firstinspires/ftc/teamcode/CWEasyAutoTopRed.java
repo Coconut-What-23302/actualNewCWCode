@@ -8,7 +8,7 @@ import org.firstinspires.ftc.teamcode.helperClasses.RobotHardware;
 
 // ethan is a monkey
 @Autonomous
-public class CWEasyAutoTopBlue extends LinearOpMode {
+public class CWEasyAutoTopRed extends LinearOpMode {
     // ethan is a monkey
     public void runOpMode() throws InterruptedException {
 // ethan is a monkey
@@ -27,17 +27,17 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.backLeft.setPower(0.5);
             robot.backRight.setPower(0.5);
 // strafe right
-            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(21));
-            robot.frontRight.setTargetPosition((int) robot.inchesToTicks(-21));
-            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(-21));
-            robot.backRight.setTargetPosition((int)robot.inchesToTicks(21));
+            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(-21));
+            robot.frontRight.setTargetPosition((int) robot.inchesToTicks(21));
+            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(21));
+            robot.backRight.setTargetPosition((int)robot.inchesToTicks(-21));
 // go forward
             robot.frontLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.frontRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 //
-            while (robot.frontLeft.getCurrentPosition() < robot.frontLeft.getTargetPosition()){
+            while (robot.frontLeft.getCurrentPosition() > robot.frontLeft.getTargetPosition()){
                 telemetry.addData("suck big", robot.frontLeft.getCurrentPosition());
                 telemetry.addData("balls", robot.frontLeft.getTargetPosition());
 
@@ -88,7 +88,7 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.leftClaw.setPosition(RobotHardware.ClawPos.LEFT_OPEN);
             robot.rightClaw.setPosition(RobotHardware.ClawPos.RIGHT_OPEN);
 
-            sleep(2000);
+            sleep(2300);
 
             robot.clawArm.setPower(0.2);
             robot.clawArm.setTargetPosition(0);
@@ -97,6 +97,8 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
                 telemetry.addData("oo oo", robot.clawArm.getCurrentPosition());
                 telemetry.addData("aa aa", robot.clawArm.getTargetPosition());
             }
+
+
             robot.frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             robot.frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
             robot.backRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -107,17 +109,17 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
             robot.backLeft.setPower(0.5);
             robot.backRight.setPower(0.5);
 // strafe right
-            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(-26));
-            robot.frontRight.setTargetPosition((int) robot.inchesToTicks(26));
-            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(26));
-            robot.backRight.setTargetPosition((int)robot.inchesToTicks(-26));
+            robot.frontLeft.setTargetPosition((int)robot.inchesToTicks(26));
+            robot.frontRight.setTargetPosition((int) robot.inchesToTicks(-26));
+            robot.backLeft.setTargetPosition((int)robot.inchesToTicks(-26));
+            robot.backRight.setTargetPosition((int)robot.inchesToTicks(26));
 // go forward
             robot.frontLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.frontRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backLeft.setMode(DcMotor.RunMode.RUN_TO_POSITION);
             robot.backRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 //
-            while (robot.frontLeft.getCurrentPosition() > robot.frontLeft.getTargetPosition()){
+            while (robot.frontLeft.getCurrentPosition() < robot.frontLeft.getTargetPosition()){
                 telemetry.addData("suck big", robot.frontLeft.getCurrentPosition());
                 telemetry.addData("balls", robot.frontLeft.getTargetPosition());
 
@@ -148,6 +150,7 @@ public class CWEasyAutoTopBlue extends LinearOpMode {
                 telemetry.addData("chilling", robot.frontLeft.getTargetPosition());
                 telemetry.update();
             }
+
         }
 
     }
